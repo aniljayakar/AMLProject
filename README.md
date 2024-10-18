@@ -21,7 +21,7 @@ This project focuses on detecting money laundering activities using machine lear
 
 ## **►Dataset**
 The dataset used is the **synthetic [IT-AML](https://www.kaggle.com/datasets/ealtman2019/ibm-transactions-for-anti-money-laundering-aml)
- dataset** developed by researchers at IBM . The dataset was sourced from Kaggle and consists of six subsets categorised by the illicit ratio of transactions: Group HI (higher illicit ratio) and Group LI (lower illicit ratio). 
+ dataset** developed by researchers @ealtman741 @stevemar at IBM . The dataset was sourced from Kaggle and consists of six subsets categorised by the illicit ratio of transactions: Group HI (higher illicit ratio) and Group LI (lower illicit ratio). 
  
 |                            | SMALL              | MEDIUM             | LARGE              |
 |----------------------------|--------------------|--------------------|--------------------|
