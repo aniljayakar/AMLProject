@@ -1,0 +1,27 @@
+# Core data manipulation
+numpy
+pandas
+scipy
+
+# Visualisation
+matplotlib
+seaborn
+
+# Machine learning
+scikit-learn
+xgboost
+lightgbm
+
+# Graph and network analysis
+networkx
+
+# Interpretability
+shap
+lime
+
+# Encoding
+category_encoders
+
+# Azure ML
+azureml-core
+azureml-dataset-runtime
