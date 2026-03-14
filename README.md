@@ -1,12 +1,12 @@
 # Money Laundering Detection Using Machine Learning
 
-**Can machine learning reliably detect financial crime in a dataset of 5 million transactions — where fewer than 1 in 1,000 is illicit?**
+**Can machine learning reliably detect financial crime in a dataset of 5 million transactions where fewer than 1 in 1,000 is illicit?**
 
 This project answers that question. Using IBM's synthetic AML dataset, I engineered 65+ features, compared 7 machine learning models across multiple resampling strategies, and identified the conditions under which fraud detection models are actually deployable in a real financial institution.
 
-**Best result:** Tuned XGBoost achieved an F1 score of 0.57 and ROC-AUC of 0.99 on normal data — outperforming all other models while maintaining interpretability through SHAP values.
+**Best result:** Tuned XGBoost achieved an F1 score of 0.57 and ROC-AUC of 0.99 on normal data, outperforming all other models while maintaining interpretability through SHAP values.
 
-**Business recommendation:** XGBoost with graph-based and temporal features, deployed at a 100:1 downsampling ratio, offers the best balance between catching illicit transactions and minimising false positives — critical in production environments where flagging legitimate transactions has real customer and reputational cost.
+**Business recommendation:** XGBoost with graph-based and temporal features, deployed at a 100:1 downsampling ratio, offers the best balance between catching illicit transactions and minimising false positives, critical in production environments where flagging legitimate transactions has real customer and reputational cost.
 
 ---
 
@@ -31,10 +31,10 @@ This project answers that question. Using IBM's synthetic AML dataset, I enginee
 Three things separated the high-performing models from the rest:
 
 **1. Feature engineering over raw features**
-Graph-based features — degree centrality, clustering coefficients, ego network size — were the strongest predictors. Money laundering is a network behaviour, not a single-transaction behaviour. Modelling the relationships between accounts, not just the transactions themselves, unlocked detection capability that raw features couldn't provide.
+Graph-based features degree centrality, clustering coefficients, ego network size, were the strongest predictors. Money laundering is a network behaviour, not a single-transaction behaviour. Modelling the relationships between accounts, not just the transactions themselves, unlocked detection capability that raw features couldn't provide.
 
 **2. Downsampling ratio matters more than upsampling**
-Upsampling the minority class (SMOTE) improved recall but hurt precision, generating too many false positives. A 100:1 downsampling ratio on Random Forest and XGBoost produced the best precision-recall balance — a finding with direct implications for production deployment where false positive rates drive operational cost.
+Upsampling the minority class (SMOTE) improved recall but hurt precision, generating too many false positives. A 100:1 downsampling ratio on Random Forest and XGBoost produced the best precision-recall balance, a finding with direct implications for production deployment where false positive rates drive operational cost.
 
 **3. Ensemble methods are non-negotiable**
 Linear models (SGD, Logistic Regression) and SVMs failed on this problem. The non-linear relationships in financial transaction networks require ensemble methods. XGBoost consistently outperformed all alternatives.
@@ -43,7 +43,7 @@ Linear models (SGD, Logistic Regression) and SVMs failed on this problem. The no
 
 ## Business Context
 
-Money laundering costs the global economy an estimated $800 billion to $2 trillion annually. Financial institutions are legally required to detect and report suspicious activity — but manual review of millions of transactions is impossible at scale.
+Money laundering costs the global economy an estimated $800 billion to $2 trillion annually. Financial institutions are legally required to detect and report suspicious activity, but manual review of millions of transactions is impossible at scale.
 
 The core challenge in building an AML detection system is not accuracy. It is the **precision-recall tradeoff**:
 - Too many false positives: operational teams are overwhelmed, legitimate customers are disrupted
